@@ -1,0 +1,23 @@
+# Core Image Processing & Computer Vision
+numpy>=1.23.0
+scipy>=1.9.0
+pillow>=9.4.0
+opencv-python>=4.7.0.72
+
+# Machine Learning & Data Science
+scikit-learn>=1.2.0
+pandas>=1.5.0
+joblib>=1.2.0
+
+# Visualization & UI
+streamlit>=1.28.0
+matplotlib>=3.7.0
+plotly>=5.14.0
+
+# Forensic PDF Reporting & Audit
+reportlab>=4.0.0
+pypdf>=4.0.0
+
+# Testing & Quality Assurance
+pytest>=7.3.0
+pytest-cov>=4.1.0

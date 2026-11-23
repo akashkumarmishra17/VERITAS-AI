@@ -1,0 +1,109 @@
+{
+  "model_name": "Random Forest Forensics Classifier (100 Trees)",
+  "training_timestamp": "2026-11-20 22:27:01",
+  "dataset_summary": {
+    "total_images": 70,
+    "authentic_count": 35,
+    "manipulated_count": 35,
+    "train_samples": 52,
+    "test_samples": 18,
+    "feature_dimension": 20
+  },
+  "evaluation_metrics": {
+    "accuracy": 0.6667,
+    "precision": 0.6667,
+    "recall": 0.6667,
+    "f1_score": 0.6667,
+    "roc_auc": 0.7778,
+    "cross_val_f1_mean": 0.6697,
+    "cross_val_f1_std": 0.1448
+  },
+  "confusion_matrix": {
+    "matrix": [
+      [
+        6,
+        3
+      ],
+      [
+        3,
+        6
+      ]
+    ],
+    "true_negatives": 6,
+    "false_positives": 3,
+    "false_negatives": 3,
+    "true_positives": 6,
+    "labels": [
+      "Authentic",
+      "Manipulated"
+    ]
+  },
+  "svm_comparison": {
+    "accuracy": 0.6667,
+    "f1_score": 0.6667
+  },
+  "roc_curve": [
+    {
+      "fpr": 0.0,
+      "tpr": 0.0
+    },
+    {
+      "fpr": 0.0,
+      "tpr": 0.1111
+    },
+    {
+      "fpr": 0.0,
+      "tpr": 0.2222
+    },
+    {
+      "fpr": 0.1111,
+      "tpr": 0.2222
+    },
+    {
+      "fpr": 0.1111,
+      "tpr": 0.3333
+    },
+    {
+      "fpr": 0.2222,
+      "tpr": 0.3333
+    },
+    {
+      "fpr": 0.2222,
+      "tpr": 0.4444
+    },
+    {
+      "fpr": 0.3333,
+      "tpr": 0.4444
+    },
+    {
+      "fpr": 0.3333,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 1.0,
+      "tpr": 1.0
+    }
+  ],
+  "feature_importances": {
+    "ela_mean": 0.1384,
+    "ela_std": 0.0765,
+    "ela_kurtosis": 0.0685,
+    "noise_cv": 0.0675,
+    "sobel_edge_std": 0.0671,
+    "rg_corr": 0.0581,
+    "ela_anomaly_ratio": 0.0577,
+    "ela_p95": 0.0545,
+    "dct_energy_var": 0.0501,
+    "ela_max": 0.0474,
+    "ela_skewness": 0.0455,
+    "gb_corr": 0.0352,
+    "rb_corr": 0.0341,
+    "noise_block_ratio": 0.0336,
+    "laplacian_var": 0.0323,
+    "noise_mean": 0.0292,
+    "noise_std": 0.0281,
+    "noise_kurtosis": 0.0267,
+    "sobel_edge_mean": 0.0254,
+    "dct_high_freq_ratio": 0.0241
+  }
+}

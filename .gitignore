@@ -1,0 +1,109 @@
+# ==============================================================================
+# VERITAS AI - Git Ignore Specification
+# ==============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+
+# C extensions & build artifacts
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+conda_env/
+env.bak/
+venv.bak/
+
+# Environment Variables, Secrets & API Keys
+*.env
+.env
+.env.*
+*.pem
+*.key
+*.token
+secrets.json
+credentials.json
+.streamlit/secrets.toml
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+nosetests.xml
+coverage.xml
+*.cover
+
+# Cache & Scratch files
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# Local SQLite Databases & Logs
+*.db
+*.sqlite
+*.sqlite3
+data/*.db
+data/veritas_history.db
+*.log
+
+# Large Datasets & Archives
+data/raw/
+data/processed/
+data/casia/
+data/comofod/
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Retain sample benchmark images and features
+!data/sample_images/
+!data/sample_images/**
+!data/extracted_features.csv
+
+# Generated Dynamic PDF Reports (Keep directory tracked via .gitkeep)
+reports/*.pdf
+!reports/.gitkeep
+
+# Retain official project documentation PDFs
+!docs/VERITAS_AI_PROJECT_DOCUMENTATION.pdf
+!docs/VERITAS_AI_USER_AND_SCREENSHOTS_GUIDE.pdf
+
+# IDE & Operating System Files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini

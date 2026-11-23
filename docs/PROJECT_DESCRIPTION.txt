@@ -1,0 +1,46 @@
+================================================================================
+PROJECT TITLE: VERITAS AI - INTELLIGENT IMAGE FORGERY DETECTION & DIGITAL FORENSICS
+SUBTITLE: An Autonomous Multi-Modal Forensic Decision-Support System
+STUDENT AUTHOR: Akash Mishra
+DEGREE: Bachelor of Technology (B.Tech) in Computer Science & Engineering (AI & ML)
+ACADEMIC YEAR: 2026-2027
+TECH STACK: Python 3.10, Streamlit, OpenCV, Scikit-learn, NumPy, SciPy, Pillow, Plotly, ReportLab, SQLite, Joblib
+================================================================================
+
+PROJECT SUMMARY & CORE OBJECTIVE:
+With the rapid proliferation of high-end image manipulation software and generative media tools, establishing the authenticity and provenance of digital photography has become critical in law enforcement, judicial evidence handling, journalistic fact-checking, and insurance fraud investigation.
+
+VERITAS AI addresses this challenge through a multi-modal digital forensics architecture that fuses physical acquisition artifacts, sensor noise variance, compression history, and classical machine learning classification. Rather than treating forgery detection as an uninterpretable black box, VERITAS AI models the tangible mathematical signatures left during image acquisition and subsequent tampering:
+
+1. ERROR LEVEL ANALYSIS (ELA):
+   Exploits JPEG quantization table characteristics by re-compressing images at a known quality factor (e.g. 90-95%) and calculating absolute pixel-wise difference maps to reveal compression generation discontinuities.
+
+2. PHOTO-RESPONSE NON-UNIFORMITY (PRNU) & SENSOR NOISE INCONSISTENCY:
+   Isolates high-frequency sensor noise residuals using median and Laplacian high-pass filtering, evaluating spatial block variance to detect smoothed, inpainted, or spliced foreign content.
+
+3. COPY-MOVE CLONING DETECTION:
+   Extracts scale- and rotation-invariant keypoints (SIFT/ORB), filters out trivial spatial neighbors (Euclidean distance >= 35px), and clusters translation displacement vectors to detect duplicated regions within the same frame.
+
+4. SPLICING LOCALIZATION:
+   Integrates ELA anomaly intensity and noise variance gradients to segment tampered zones, drawing bounding boxes and computing pixel areas and relative canvas percentage.
+
+5. 20-DIMENSIONAL FORENSIC FEATURE EXTRACTION & MACHINE LEARNING:
+   Extracts statistical moments (mean, std, skewness, kurtosis, p95), edge continuity metrics, cross-color channel correlation, and 2D Discrete Cosine Transform (DCT) high-frequency spectral ratios into a 20-D vector fed into a Random Forest Classifier (100 Trees) and RBF SVM baseline.
+
+6. CALIBRATED AMBIGUITY MARGIN:
+   Enforces a calibrated inconclusive zone (0.40 <= P <= 0.60) to eliminate false certainty and protect against wrongful allegations, adhering to ISO/IEC 27037 digital evidence standards.
+
+7. LOCAL SQLITE AUDITING & REPORTLAB PDF GENERATION:
+   Maintains a tamper-evident local database audit trail and produces publication-quality, court-admissible forensic examination reports with embedded visual evidence artifacts.
+
+================================================================================
+KEY VIVA QUESTIONS & DEFENSE HIGHLIGHTS:
+Q1: Why is Error Level Analysis (ELA) not mathematical proof of forgery?
+A1: ELA measures JPEG compression error variance. High-frequency natural textures (e.g. foliage, fur, sharp contrast edges) naturally degrade at higher rates even in untouched authentic photos. ELA must always be corroborated by noise analysis, keypoint clustering, and statistical classification.
+
+Q2: How does the system handle class imbalance and prevent data leakage?
+A2: Stratified train/test splitting guarantees proportional representation of authentic and manipulated classes in both partitions. Crucially, feature scaling (StandardScaler) is fitted strictly on the training partition and then applied to test data, preventing data leakage.
+
+Q3: What happens when the model is not trained?
+A3: VERITAS AI never produces fabricated confidence scores or random numbers. If model weights are missing from models/, the system displays "MODEL NOT TRAINED" with instructions to run the training pipeline.
+================================================================================
